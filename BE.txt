@@ -1,0 +1,13 @@
+ResilienTx: An ACID-Compliant Transaction Hypervisor and Compensating Saga Engine for Non-Deterministic Autonomous Agent Workflows
+
+
+The "Expert-Proof" Complete Problem Statement
+If you present the problem like this, you will immediately silence the experts because you have anticipated their deepest architectural concerns:
+
+The Problem:
+"As enterprises deploy autonomous AI agents to execute multi-step workflows across external APIs, a massive reliability gap has emerged. Because Large Language Models are non-deterministic, agents frequently fail mid-task due to hallucinations, schema mismatches, or network drops. Unlike local SQL databases, distributed REST APIs lack a native ROLLBACK command, leaving behind corrupted states and orphaned cloud resources.
+
+Existing Agentic frameworks fail to solve this because they cannot dynamically synthesize semantic compensating transactions for unpredictable AI actions. Furthermore, naive rollback solutions ignore critical distributed system realities: they fail to isolate concurrent modifications during the saga, they crash when compensating APIs time out, and they blindly execute irreversible actions (like sending emails) before the workflow is fully validated.
+
+The Project Goal (AgenticSaga):
+We are building an ACID-compliant AI Hypervisor that acts as a distributed transaction manager for LLMs. It utilizes a Write-Ahead Agent Ledger (WAAL) to trace API mutations. Upon agent failure, a secondary AI engine parses OpenAPI specs to dynamically synthesize idempotent compensating actions (e.g., mapping ChargeCustomer to RefundCustomer). To ensure enterprise viability, the system implements semantic locking to prevent concurrent state drift, PII-scrubbing for compliance, and a human-in-the-loop staging queue to isolate irreversible real-world actions until the entire saga safely completes."
